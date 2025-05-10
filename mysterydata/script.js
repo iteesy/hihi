@@ -35,34 +35,34 @@ function goOutside() {
                     flowerEmoji.style.transform = "translateY(20px)";
                     // random delay
                     const randomDelay = Math.random() * 2;
-                    flowerEmoji.style.transition = `opacity 0.5s ease-out ${randomDelay}s, transform 0.5s ease-out ${randomDelay}s`;
+                    flowerEmoji.style.transition = `opacity 0.5s ease-out, transform 0.5s ease-out`;
                     flowerElement.appendChild(flowerEmoji);
-                    // start transition
-                    requestAnimationFrame(() => {
+                    // start transition after delay
+                    setTimeout(() => {
                         flowerEmoji.style.opacity = "1";
                         flowerEmoji.style.transform = "translateY(0)";
-                    });
+                    }, randomDelay * 1000);
                 } else { 
                     const carEmoji = document.createElement("div");
                     const carOptions = ["🚗", "🥀"];
                     carEmoji.textContent = carOptions[Math.floor(Math.random() * carOptions.length)];
                     carEmoji.style.fontSize = "24px";
                     carEmoji.style.position = "absolute";
-                    // random position within the window
+                    // random position
                     carEmoji.style.left = `${Math.random() * containerWidth}px`;
                     carEmoji.style.top = `${Math.random() * containerHeight}px`;
                     // transition effects
                     carEmoji.style.opacity = "0";
                     carEmoji.style.transform = "translateY(20px)";
-                    // random delay between 0 and 2 seconds
+                    // random delay
                     const randomDelay = Math.random() * 2;
-                    carEmoji.style.transition = `opacity 0.5s ease-out ${randomDelay}s, transform 0.5s ease-out ${randomDelay}s`;
+                    carEmoji.style.transition = `opacity 0.5s ease-out, transform 0.5s ease-out`;
                     carElement.appendChild(carEmoji);
-                    // start transition
-                    requestAnimationFrame(() => {
+                    // start transition after delay
+                    setTimeout(() => {
                         carEmoji.style.opacity = "1";
                         carEmoji.style.transform = "translateY(0)";
-                    });
+                    }, randomDelay * 1000);
                 }
             });
         })
