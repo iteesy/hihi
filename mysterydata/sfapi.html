@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>what walking in sf is like</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <script src="https://unpkg.com/hydra-synth"></script>
+</head>
+<body>
+  <div id="container">
+    <div id="flower"></div>
+    <div id="car"></div>
+  </div>
+  <canvas id="myCanvas"></canvas>
+
+  <script>
+     var hydra = new Hydra({
+        canvas: document.getElementById("myCanvas")
+    })
+    s0.initImage(
+    "https://images.unsplash.com/photo-1504253163759-c23fccaebb55?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y2xvdWR8ZW58MHx8MHx8fDA%3D"
+  );
+  src(o0)
+    //.blend(osc(10, 0.1, 0.5), 0.01)
+    .modulate(o0, -0.001)
+    .blend(o0)
+    .layer(
+      src(s0)
+        .luma(0.8, 0)
+        .modulate(noise(8), 0.01)
+        .modulate(o0, -0.01)
+        .scale(() => s)
+        .hue(() => h - 0.8) 
+    )
+    .out();
+  </script>
+</body>
+</html>
